@@ -1,0 +1,61 @@
+﻿@model IEnumerable<NewLibrary.Models.Student>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+
+<form id="formSearch" method="post">
+    <div class="row" id="SearchBox">
+        <div class="col-md-2"> Student Name</div>
+        <div class="col-md-2"> <input type="text" value="@ViewBag.name" id="name" name="name" /></div>
+        <div class="col-md-1">  </div>
+    </div>
+
+    <div class="row" id="SearchBox">
+        <div class="col-md-2"> Student Age</div>
+        <div class="col-md-2"> <input type="text" value="@ViewBag.age" id="age" name="age" /></div>
+        <div class="col-md-1"> <input type="submit" id="submitsearch" value="Search" /></div>
+    </div>
+
+</form>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Age)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudentName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Password)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Age)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.StudentID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.StudentID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.StudentID })
+        </td>
+    </tr>
+}
+
+</table>

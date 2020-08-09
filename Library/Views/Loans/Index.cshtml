@@ -1,0 +1,63 @@
+﻿@model IEnumerable<NewLibrary.Models.Loans>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<form id="formSearch" method="post">
+    <div class="row" id="SearchBox">
+        <div class="col-md-2"> Book Name</div>
+        <div class="col-md-2"> <input type="text" value="@ViewBag.book" id="book" name="book" /></div>
+        <div class="col-md-1"> <input type="submit" id="submitsearch" value="Search" /></div>
+    </div>
+
+
+
+
+</form>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Books.BookName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.student.StudentName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Active)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.peopel)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Books.BookName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.student.StudentName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Active)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.peopel)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.LoansID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.LoansID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.LoansID })
+        </td>
+    </tr>
+}
+
+</table>
