@@ -1,0 +1,59 @@
+﻿@model NewStore.Models.Item
+
+@{
+    ViewBag.Title = "Details";
+    
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>Item</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Brand.BrandName)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Brand.BrandName)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ItemName)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ItemName)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ItemType)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ItemType)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Stock)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Stock)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ItemID }) |
+        @Html.ActionLink("Back to List", "ItemIndex")
+    </p>
+</body>
+</html>

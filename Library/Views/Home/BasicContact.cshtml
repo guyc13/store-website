@@ -1,0 +1,79 @@
+﻿
+@{
+    ViewBag.Title = "BasicContact";
+
+    if (@ViewBag.Admin == "true")
+    {
+        Layout = "~/Views/Shared/_BasicLayout.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_ClientLayout.cshtml";
+    }
+
+}
+<div id="columns" class="row">
+    <div class="col-md-4">
+        <link href="https://fonts.googleapis.com/css?family=Didact+Gothic|Fredoka+One|Righteous&display=swap" rel="stylesheet">
+        <style>
+            h2, h3, p1 {
+                font-family: 'Righteous', cursive;
+                font-family: 'Didact Gothic', sans-serif;
+                font-family: 'Fredoka One', cursive;
+            }
+        </style>
+        <br />
+        <br />
+        <h2>Contact</h2>
+        <h3>you can contact us:</h3>
+        <address>
+            <br />
+            <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
+            <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+        </address>
+    </div>
+    <div class="col-md-4">
+        <canvas id="my-house" width="300" height="300"></canvas>
+        <script>
+            canvas = document.getElementById('my-house');
+            const ctx = canvas.getContext('2d');
+            // Set line width
+            ctx.lineWidth = 10;
+
+            // Wall
+            ctx.strokeRect(75, 140, 150, 110);
+
+            // Door
+            ctx.fillRect(130, 190, 40, 60);
+
+            // Roof
+            ctx.moveTo(50, 140);
+            ctx.lineTo(150, 60);
+            ctx.lineTo(250, 140);
+            ctx.closePath();
+            ctx.stroke();</script>
+    </div>
+</div>
+<p1>
+    check when is the best day-and come to visit us !!!!
+    <br />
+</p1>
+<a class="weatherwidget-io"
+   href="https://forecast7.com/en/31d7735d21/jerusalem/"
+   data-label_1="Jerusalem"
+   data-label_2="WEATHER"
+   data-font="Open Sans"
+   data-icons="Climacons Animated"
+   data-mode="Forecast" data-days="5" data-textcolor="#00000">Jerusalem WEATHER</a>
+<script>
+            !function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (!d.getElementById(id)) {
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = 'https://weatherwidget.io/js/widget.min.js';
+                    fjs.parentNode.insertBefore(js, fjs);
+                }
+            }
+                (document, 'script', 'weatherwidget-io-js');
+</script>

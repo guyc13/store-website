@@ -1,7 +1,72 @@
 ﻿@{
     ViewBag.Title = "About";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v7.0"></script>
+<article>
+    <header>
+        <link href="https://fonts.googleapis.com/css?family=Didact+Gothic|Fredoka+One|Righteous&display=swap" rel="stylesheet">
+        <style>
+            h1, h2 {
+                font-family: 'Righteous', cursive;
+                font-family: 'Didact Gothic', sans-serif;
+                font-family: 'Fredoka One', cursive;
+            }
+        </style>
+        <link href="https://fonts.googleapis.com/css?family=Didact+Gothic|Fredoka+One|Righteous&display=swap" rel="stylesheet">
+        <style>
+            p1 {
+                font-family: 'Righteous', cursive;
+                font-family: 'Didact Gothic', sans-serif;
+                font-family: 'Fredoka One', cursive;
+            }
+        </style>
+        <div id="columns" class="row">
+            <div class="col-md-4">
+                <h1 style="text-shadow:2px 3px;">
+                    All About Us
+                </h1><aside style="display: block;">
+    <p class="byline">
+        Since 2020, During the Covid-19 pendamic,<br>
+        I'v founded my own jewlery bussines,
+        which is handmade with high quality metrials.
+        located in Jerusalem <br>
+        
+        
+    </p>
+</aside>
+            </div>
+            <div style="padding-left:150px;" class="col-md-4">
+                <section>
+                    <h2>Address  </h2>
+                    <p>
+                        Yaackov Tzur 16,
+                        <br />Jerusalem <br />
+                        
 
-<p>Use this area to provide additional information.</p>
+                    </p>
+                    <a href='GoogleMaps' class="btn cart-btn">Go To Map</a>
+
+                </section>
+            </div>
+        </div>
+    </header>
+
+</article>
+<div id="columns" class="row">
+
+    <div class="col-md-4">
+        <video width="320" height="240" controls>
+            <source src="~/Content/images/video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+</div>
+<br />
+<p1>
+    you can share with your friend- and tell us if you liked it!
+</p1>
+<br />
+<div class="fb-like" data-href="https://www.facebook.com/My-Store-111798177224460" data-width="" data-layout="standard" data-action="like" data-size="small" data-share="true"></div>

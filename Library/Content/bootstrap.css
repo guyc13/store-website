@@ -339,6 +339,7 @@ a {
   text-decoration: none;
 }
 
+
 a:hover,
 a:focus {
   color: #2a6496;
@@ -1527,7 +1528,7 @@ table th[class*="col-"] {
 .table > thead > tr.success > th,
 .table > tbody > tr.success > th,
 .table > tfoot > tr.success > th {
-  background-color: #dff0d8;
+  background-color: #946d3f; 
   border-color: #d6e9c6;
 }
 
@@ -1917,7 +1918,7 @@ textarea.input-lg {
 
 .has-success .input-group-addon {
   color: #468847;
-  background-color: #dff0d8;
+  background-color: #946d3f;
   border-color: #468847;
 }
 
@@ -5037,7 +5038,7 @@ a.thumbnail:focus {
 
 .alert-success {
   color: #468847;
-  background-color: #dff0d8;
+  background-color: #946d3f;
   border-color: #d6e9c6;
 }
 
@@ -5480,7 +5481,7 @@ a.list-group-item:focus {
 
 .panel-success > .panel-heading {
   color: #468847;
-  background-color: #dff0d8;
+  background-color: #946d3f;
   border-color: #d6e9c6;
 }
 

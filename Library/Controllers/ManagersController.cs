@@ -6,13 +6,13 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using NewLibrary.Models;
+using NewStore.Models;
 
-namespace Library.Controllers
+namespace Jstore.Controllers
 {
     public class ManagersController : Controller
     {
-        private DBLibrary db = new DBLibrary();
+        private DBStore db = new DBStore();
 
         // GET: Managers
         [HttpGet]

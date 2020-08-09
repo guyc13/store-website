@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "GoogleMaps";
+    Layout = "~/Views/Shared/_MapLayout.cshtml";
+
+}
+<!doctype html>
+<html>
+
+<body onload="initialize()">
+    <h2 style="  font-family:   'Fredoka One', cursive;">Where Are We?</h2>
+    <aside style="
+    width: 40%;
+    padding-left: .5rem;
+    margin-left: .5rem;
+    float: right;
+    box-shadow: inset 5px 0 5px -5px #29627e;
+    font-style: italic;>
+        <p style=" margin: .5rem;">Address:   
+        Yaackov Tzur 16,
+        <br />Jerusalem <br /></p>
+        <a href="javascript:history.back()" style="padding-left:10px">Back</a>
+
+    </aside>
+    
+    <div class="col-md-4 col-sm-6 fh5co-tours animate-box" data-animate-effect="fadeIn">
+        <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnUBowr4LBkxqc1_hOolEMckU8RN507tg&callback=initMap" async defer></script>
+        <script type="text/javascript">function initialize() {
+                var mapOptions = {
+                    center: new google.maps.LatLng(31.750827, 35.166108),
+                    zoom: 17,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                };
+                var infoWindow = new google.maps.InfoWindow();
+                var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+                $.getJSON("/Home/ResGoogleMap", function (data) {
+                        var myLatlng = new google.maps.LatLng(data[0],data[1]);
+                        var marker = new google.maps.Marker({
+                            position: myLatlng,
+                            map: map
+                        })
+                        marker.setMap(map);
+                });
+            }</script>
+    </div>
+    <link href="~/lib/bootstrap/dist/css/bootstarp-PostTitle_Index.css" rel="stylesheet" />
+    <form id="form1" runat="server">
+        <div id="map_canvas" style="width: 600px; height: 400px; "></div>
+    </form>
+
+    
+</body>
+</html>

@@ -1,34 +1,43 @@
-﻿@model NewLibrary.Models.Manager
+﻿@model NewStore.Models.Manager
 
 @{
     ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<!DOCTYPE html>
 
-<div>
-    <h4>Manager</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.ManagerName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ManagerName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ManagerPassword)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ManagerPassword)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ManagerID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>Manager</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.ManagerName)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ManagerName)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ManagerPassword)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ManagerPassword)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ManagerID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

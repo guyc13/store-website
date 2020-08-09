@@ -1,0 +1,115 @@
+﻿@model IEnumerable<NewStore.Models.Item>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="font-family: 'Righteous', cursive;
+                font-family: 'Didact Gothic', sans-serif;
+                font-family: 'Fredoka One', cursive;">Items List</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+
+
+<form id="formSearch" method="post">
+    <div class="row" id="SearchBox">
+        <div class="col-md-2"> Item Name</div>
+        <div class="col-md-2"> <input type="text" value="@ViewBag.name" id="name" name="name" /></div>
+        <div class="col-md-1">  </div>
+    </div>
+
+    <div class="row" id="SearchBox">
+        <div class="col-md-2"> Item Type</div>
+        <div class="col-md-2"> <input type="text" value="@ViewBag.type" id="type" name="type" /></div>
+        <div class="col-md-1"> </div>
+        </div>
+    <div class="row" id="SearchBox">
+        <div class="col-md-2"> Stock</div>
+        <div class="col-md-2"> <input type="text" value="@ViewBag.stock" id="stock" name="stock" /></div>
+        <div class="col-md-1"> <input type="submit" id="submitsearch" value="Search" /></div>
+    </div>
+
+
+
+</form>
+<p>
+
+</p>
+<button>
+    @Html.ActionLink("Grouping items by type", "Group")
+</button>
+<p>
+
+</p>
+
+<table id="table" class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ItemName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Brand.BrandName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ItemType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Stock)
+        </th>
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ItemName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Brand.BrandName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ItemType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Stock)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ItemID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ItemID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ItemID }) 
+           
+        </td>
+    </tr>
+}
+
+</table>
+
+
+<style>
+
+    #formSearch{
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    table {
+       
+        border-collapse: collapse;
+        width: 100%;
+        background-color: #f8f8f8;
+        border: 1.5px solid black;
+    }
+
+    #submitsearch:hover {
+        color: #000;
+        box-shadow: 3px 1rem 2rem rgba(2, 1, 1, 0.3);
+        transform: translateY(-0.5rem);
+        transition: all .5s;
+    }
+
+</style>

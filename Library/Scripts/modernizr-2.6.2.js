@@ -41,7 +41,7 @@
  * To get a build that includes Modernizr.load(), as well as choosing
  * which tests to include, go to www.modernizr.com/download/
  *
- * Authors        Faruk Ates, Paul Irish, Alex Sexton
+ * Brands        Faruk Ates, Paul Irish, Alex Sexton
  * Contributors   Ryan Seddon, Ben Alman
  */
 
@@ -350,7 +350,7 @@ window.Modernizr = (function( window, document, undefined ) {
     // Because the testing of the CSS property names (with "-", as
     // opposed to the camelCase DOM properties) is non-portable and
     // non-standard but works in WebKit and IE (but not Gecko or Opera),
-    // we explicitly reject properties with dashes so that authors
+    // we explicitly reject properties with dashes so that Brands
     // developing in WebKit or IE first don't end up with
     // browser-specific content by accident.
 

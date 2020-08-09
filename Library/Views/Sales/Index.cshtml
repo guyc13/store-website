@@ -1,0 +1,54 @@
+﻿@model IEnumerable<NewStore.Models.Sales>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Client.ClientFirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Items.ItemName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Active)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Client.ClientFirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Items.ItemName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Active)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.SalesID }) |
+                @Html.ActionLink("Details", "Details", new { id=item.SalesID }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.SalesID })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

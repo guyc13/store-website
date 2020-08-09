@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "BasicGroup";
+    if (@ViewBag.Admin == "true")
+    {
+        Layout = "~/Views/Shared/_BasicLayout.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_ClientLayout.cshtml";
+    }
+}
+
+@using Jstore.Controllers
+@using NewStore.Models
+
+@model List<Group<string, Item>>
+
+@{
+    ViewBag.Title = "LINQ Grouping";
+}
+<h2>Grouping items by Type</h2>
+<table class="table">
+    <tbody>
+        @foreach (var group in Model)
+        {
+            <tr><th colspan="3" style=" font-size:20px; ">@group.Key</th></tr>
+            <tr><th>Brand</th><th style="padding-left:90px">Item Name</th></tr>
+
+            foreach (var Item in group.Values)
+            {
+                <tr><td>@Item.Brand.BrandName</td><td style="padding-left:100px">@Item.ItemName</td><td></tr>
+            }
+        }
+    </tbody>
+</table>
+
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        background-color: #f8f8f8;
+        border: 1.5px solid black;
+    }
+</style>
+
